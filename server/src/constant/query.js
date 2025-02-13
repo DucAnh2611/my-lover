@@ -1,0 +1,3 @@
+const QUERY_DANGEROUS_KEYS = "DROP COMMIT";
+
+module.exports = { QUERY_DANGEROUS_KEYS };

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], 
+    "jsx": "react-jsx",            
+    "jsxImportSource": "react",           
+    "module": "ESNext",                       
+    "moduleResolution": "Node",              
+    "strict": true,                           
+    "esModuleInterop": true,                  
+    "allowSyntheticDefaultImports": true,     
+    "forceConsistentCasingInFileNames": true, 
+    "skipLibCheck": true,                     
+    "resolveJsonModule": true,                
+    "isolatedModules": true,                  
+    "incremental": true,                      
+    "noEmit": true,   
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components": ["./src/components/*"],
+      "@/lib": ["./src/lib/*"],
+    }                          
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"],
+  "ts-node": {
+    "compilerOptions": {
+      "jsx": "react"                         // For compatibility when using ts-node
+    }
+  }
+}
