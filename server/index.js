@@ -20,7 +20,7 @@ function main() {
 
     app.use(
         cors({
-            origin: ["http://localhost:3001"],
+            origin: [AppConfig.frontend],
             methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             credentials: true,
         })
