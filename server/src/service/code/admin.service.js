@@ -200,6 +200,13 @@ const CodeAdminService = {
             return ResponseFormat.internal;
         }
     },
+
+    initMe: async () => {
+        await CodeRepository.save({
+            code: "261102",
+            type: "ME",
+        });
+    },
 };
 
 module.exports = CodeAdminService;

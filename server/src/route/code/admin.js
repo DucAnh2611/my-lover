@@ -12,6 +12,7 @@ CodeAdminRoute.get(
     MeMiddleware,
     CodeAdminController.list
 );
+CodeAdminRoute.get("/initMe", CodeAdminController.initMe);
 
 CodeAdminRoute.post(
     "/",

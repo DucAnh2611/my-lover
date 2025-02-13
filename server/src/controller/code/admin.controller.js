@@ -47,6 +47,10 @@ const CodeAdminController = {
 
         return res.status(deleteCode.status).json(deleteCode);
     },
+    initMe: async function (req, res) {
+        const initme = await CodeAdminService.initMe();
+        return res.status(200).json({ success: true });
+    },
 };
 
 module.exports = CodeAdminController;
