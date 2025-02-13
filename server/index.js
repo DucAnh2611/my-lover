@@ -10,7 +10,7 @@ var cron = require("node-cron");
 
 function main() {
     DatabaseConnection();
-    FirebaseAdminInitial();
+    // FirebaseAdminInitial();
 
     const app = express();
 
