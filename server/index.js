@@ -6,6 +6,7 @@ const { DatabaseConnection } = require("./src/lib/database");
 const Routes = require("./src/route");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+var cron = require("node-cron");
 
 function main() {
     DatabaseConnection();
@@ -27,8 +28,20 @@ function main() {
 
     Routes(app);
 
+    app.get("/ping", (req, res) => {
+        return res.status(200).json({
+            success: true,
+        });
+    });
+
     app.listen(AppConfig.port, () => {
         console.log(`[Done] App listening on ${AppConfig.port}`);
+    });
+
+    cron.schedule("*/14 * * * *", async () => {
+        await fetch(AppConfig.selfUrl + "/ping", {
+            method: "Get",
+        });
     });
 }
 
